@@ -7,7 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
     TasksModule,
-    MongooseModule.forRoot('mongodb://localhost:27017/nest-test', {
+    MongooseModule.forRoot('mongodb://localhost/nest-test', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }),
