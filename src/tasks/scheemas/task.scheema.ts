@@ -1,10 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type taskDocument = task & Document;
+export type taskDocument = Task & Document;
 
 @Schema()
-export class task {
+export class Task {
   @Prop()
   title: string;
   @Prop()
@@ -13,4 +13,4 @@ export class task {
   done: boolean;
 }
 
-export const TaskSchema = SchemaFactory.createForClass(task);
+export const TaskSchema = SchemaFactory.createForClass(Task);

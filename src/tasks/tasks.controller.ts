@@ -9,19 +9,19 @@ import {
 } from '@nestjs/common';
 import { CreateTaskDTO } from './DTO/createTask.dto';
 import { TasksService } from './tasks.service';
-import { task } from './scheemas/task.scheema';
+import { Task } from './scheemas/task.scheema';
 
 @Controller('tasks')
 export class TasksController {
   constructor(private tasksService: TasksService) {}
 
   @Get()
-  getTasks(): Promise<task[]> {
+  getTasks(): Promise<Task[]> {
     return this.tasksService.getTasks();
   }
 
   @Get('/:id')
-  getTaskById(@Param('id') id: string): Promise<task> {
+  getTaskById(@Param('id') id: string): Promise<Task> {
     return this.tasksService.getTask(id);
   }
 
